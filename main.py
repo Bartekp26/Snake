@@ -17,8 +17,8 @@ yellow = (255, 255, 105)
 white = (255, 255, 255)
 
 # Snake
-snake_size = 20
-snake_speed = 15
+snake_size = 25
+snake_speed = 20
 
 clock = pygame.time.Clock()
 
@@ -115,7 +115,7 @@ def game_loop():
 
         pygame.display.update()
 
-        if x == food_x and y == food_y:
+        if  food_x-snake_size < x < food_x+snake_size and food_y-snake_size < y < food_y+snake_size:
             food_x = round(random.randrange(0, display_width - snake_size) / 10.0) * 10.0
             food_y = round(random.randrange(0, display_height - snake_size) / 10.0) * 10.0
             length_of_snake += 1
